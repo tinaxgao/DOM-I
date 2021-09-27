@@ -41,38 +41,44 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-  const services = document.createElement('a');
-    services.textContent = "Services";
+const nav = document.querySelector("nav");
+nav.querySelectorAll('a').forEach(i => i.style.color="green");
+
+  const services = nav.querySelector('a:nth-of-type(1)');
+    services.textContent = siteContent["nav"]["nav-item-1"];
     services.href = "#";
-    document.querySelector("nav").appendChild(services);
-  const product = document.createElement('a');
-    product.textContent = "Product";
+  const product = nav.querySelector('a:nth-of-type(2)');
+    product.textContent = siteContent["nav"]["nav-item-2"];
     product.href = "#";
-    document.querySelector("nav").appendChild(product);
-  const vision = document.createElement('a');
-    vision.textContent = "Vision";
+  const vision = nav.querySelector('a:nth-of-type(3)');
+    vision.textContent = siteContent["nav"]["nav-item-3"];
     vision.href = "#";
-    document.querySelector("nav").appendChild(vision);
-  const features = document.createElement('a');
-    features.textContent = "Features";
+  const features = nav.querySelector('a:nth-of-type(4)');
+    features.textContent = siteContent["nav"]["nav-item-4"];
     features.href = "#";
-    document.querySelector("nav").appendChild(features);
-    const about = document.createElement('a');
-    about.textContent = "About";
+    const about = nav.querySelector('a:nth-of-type(5)');
+    about.textContent = siteContent["nav"]["nav-item-5"];
     about.href = "#";
-    document.querySelector("nav").appendChild(about);
-  const contact = document.createElement('a');
-    contact.textContent = "Contact";
+  const contact = nav.querySelector('a:nth-of-type(6)');
+    contact.textContent = siteContent["nav"]["nav-item-6"];
     contact.href = "#";
-    document.querySelector("nav").appendChild(contact);
+ const newLink1 = document.createElement("a");
+ newLink1.textContent = "First";
+ newLink1.href="#";
+ nav.prepend(newLink1);
 
-const cta = document.querySelector("h1");
-cta.textContent = siteContent["cta"]["h1"];
+ const newLink2 = document.createElement("a");
+ newLink2.textContent = "Last";
+ newLink2.href="#";
+ nav.appendChild(newLink2);
 
+ //call to action
+const cta = document.querySelector("h1").textContent = siteContent["cta"]["h1"];
 const ctaButton = document.querySelector("button").textContent = siteContent["cta"]["button"];
 
 const headerImg = document.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
 
+//main content
 const topContent = document.querySelector(".top-content");
 const bottomContent = document.querySelector(".bottom-content");
 
@@ -98,10 +104,12 @@ const visionContent = bottomContent.querySelector(".text-content:nth-of-type(3)"
 visionContent.querySelector("h4").textContent = siteContent["main-content"]["vision-h4"];
 visionContent.querySelector("p").textContent = siteContent["main-content"]["vision-content"];
 
+//contact
 const contactContent = document.querySelector(".contact");
 contactContent.querySelector("h4").textContent = siteContent["contact"]["contact-h4"];
 contactContent.querySelector("p:nth-of-type(1)").textContent = siteContent["contact"]["address"];
 contactContent.querySelector("p:nth-of-type(2)").textContent = siteContent["contact"]["phone"];
 contactContent.querySelector("p:nth-of-type(3)").textContent = siteContent["contact"]["email"];
 
+//footer
 const footer = document.querySelector("footer > p").textContent = siteContent["footer"]["copyright"];
