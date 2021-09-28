@@ -75,7 +75,9 @@ nav.querySelectorAll('a').forEach(i => i.style.color="green");
 
  //call to action
 const cta = document.querySelector("h1").textContent = siteContent["cta"]["h1"];
-const ctaButton = document.querySelector("button").textContent = siteContent["cta"]["button"];
+const ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+ctaButton.addEventListener('click', (event) => {event.target.style.backgroundColor = 'blue';});
 
 const headerImg = document.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
 
