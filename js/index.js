@@ -62,15 +62,16 @@ nav.querySelectorAll('a').forEach(i => i.style.color="green");
   const contact = nav.querySelector('a:nth-of-type(6)');
     contact.textContent = siteContent["nav"]["nav-item-6"];
     contact.href = "#";
- const newLink1 = document.createElement("a");
- newLink1.textContent = "First";
- newLink1.href="#";
- nav.prepend(newLink1);
+  
+  const newLink1 = document.createElement("a");
+    newLink1.textContent = "First";
+    newLink1.href="#";
+    nav.prepend(newLink1);
 
- const newLink2 = document.createElement("a");
- newLink2.textContent = "Last";
- newLink2.href="#";
- nav.appendChild(newLink2);
+  const newLink2 = document.createElement("a");
+    newLink2.textContent = "Last";
+    newLink2.href="#";
+    nav.appendChild(newLink2);
 
  //call to action
 const cta = document.querySelector("h1").textContent = siteContent["cta"]["h1"];
@@ -105,9 +106,13 @@ visionContent.querySelector("h4").textContent = siteContent["main-content"]["vis
 visionContent.querySelector("p").textContent = siteContent["main-content"]["vision-content"];
 
 //contact
+const addr1 = siteContent["contact"]["address"].slice(0, 18);
+const addr2 = siteContent["contact"]["address"].slice(18, 32);
+const formattedAddr = addr1 + '<br>' + addr2;
+
 const contactContent = document.querySelector(".contact");
 contactContent.querySelector("h4").textContent = siteContent["contact"]["contact-h4"];
-contactContent.querySelector("p:nth-of-type(1)").textContent = siteContent["contact"]["address"];
+contactContent.querySelector("p:nth-of-type(1)").innerHTML = formattedAddr;
 contactContent.querySelector("p:nth-of-type(2)").textContent = siteContent["contact"]["phone"];
 contactContent.querySelector("p:nth-of-type(3)").textContent = siteContent["contact"]["email"];
 
